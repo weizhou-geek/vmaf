@@ -12,6 +12,7 @@ test_model = executable('test_model',
     c_args : vmaf_cflags_common,
     cpp_args : vmaf_cflags_common,
     objects : libptools.extract_all_objects(),
+    dependencies : thread_lib,
 )
 
 test('test_picture', test_picture)
