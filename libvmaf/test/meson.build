@@ -15,5 +15,11 @@ test_model = executable('test_model',
     dependencies : thread_lib,
 )
 
+test_context = executable('test_context',
+    ['test.c', 'test_context.c', '../src/libvmaf.rc.c'],
+    include_directories : [libvmaf_inc, test_inc],
+)
+
 test('test_picture', test_picture)
 test('test_model', test_model)
+test('test_context', test_context)
